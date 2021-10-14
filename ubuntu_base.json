@@ -1,0 +1,27 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key":"{{user `aws_access_key`}}",
+            "secret_key":"{{user `aws_secret_key`}}",
+            "region": "ap-southeast-1",
+            "ami_name": "ubuntu20.04-linux-base-os",
+            "source_ami": "ami-0d058fe428540cd89",
+            "instance_type":"t2.micro",
+            "ssh_username": "ubuntu"
+        }
+    ],
+
+    "provisioners":[
+        {
+            "type": "file",
+            "source": "base_config/pubkey/ansible.pub",
+            "destination":"/tmp/ansible.pub"
+        },
+        {
+            "type": "shell",
+            "scripts": "base_config/ubuntu_setup.sh"
+        }
+    ]
+
+}
