@@ -1,7 +1,7 @@
 # Cache objects
 packer_cache/
 aws-key.json
-pubkey/ansible
+base_config/pubkey/ansible
 # Crash log
 crash.log
 

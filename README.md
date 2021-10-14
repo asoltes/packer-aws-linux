@@ -12,7 +12,11 @@ create a `aws-key.json` file with the aws access key:
 ```
 execute the following command to create the ami.
 
+### Ubuntu 
 `packer build -var-file aws-key.json ubuntu_base.json`
+
+### Amazon2 
+`packer build -var-file aws-key.json amazon_base.json`
 
 ## Sample Output
 
